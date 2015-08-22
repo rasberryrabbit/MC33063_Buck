@@ -1,0 +1,311 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:mc33063buck1-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "MC33063 buck converter 40kHz(12V to 5V)"
+Date "2015-08-21"
+Rev "1.0"
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L MC34063 U1
+U 1 1 55D66C2D
+P 5150 3500
+F 0 "U1" H 5300 3850 60  0000 L CNN
+F 1 "MC34063" H 5250 3150 60  0000 L CNN
+F 2 "" H 5150 3500 60  0000 C CNN
+F 3 "" H 5150 3500 60  0000 C CNN
+	1    5150 3500
+	1    0    0    -1  
+$EndComp
+Text GLabel 3150 2400 0    60   Input ~ 0
+Vin
+Text GLabel 3150 4400 0    60   Input ~ 0
+GND
+Text GLabel 8450 4400 2    60   Output ~ 0
+GND
+Text GLabel 8450 2400 2    60   Output ~ 0
+Vout
+Wire Wire Line
+	5150 2400 5150 3000
+Wire Wire Line
+	3150 2400 5150 2400
+$Comp
+L R R1
+U 1 1 55D66D49
+P 4300 2850
+F 0 "R1" V 4380 2850 50  0000 C CNN
+F 1 "0.2" V 4300 2850 50  0000 C CNN
+F 2 "" V 4230 2850 30  0000 C CNN
+F 3 "" H 4300 2850 30  0000 C CNN
+	1    4300 2850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4300 3000 4300 3350
+Wire Wire Line
+	4300 2700 4300 2400
+Connection ~ 4300 2400
+$Comp
+L C C1
+U 1 1 55D66DF8
+P 4100 4000
+F 0 "C1" H 4125 4100 50  0000 L CNN
+F 1 "470pF" H 4125 3900 50  0000 L CNN
+F 2 "" H 4138 3850 30  0000 C CNN
+F 3 "" H 4100 4000 60  0000 C CNN
+	1    4100 4000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4100 4400 4100 4150
+Wire Wire Line
+	6000 2800 6000 3400
+Wire Wire Line
+	4300 3100 4950 3100
+Wire Wire Line
+	4950 3100 4950 2800
+Wire Wire Line
+	4950 2800 6750 2800
+Connection ~ 6000 3300
+Connection ~ 4300 3100
+Wire Wire Line
+	5150 4400 5150 4000
+Connection ~ 4100 4400
+Connection ~ 5150 4400
+$Comp
+L D_Schottky D1
+U 1 1 55D66FBC
+P 6750 3850
+F 0 "D1" H 6750 3950 50  0000 C CNN
+F 1 "1N5822" H 6750 3750 50  0000 C CNN
+F 2 "" H 6750 3850 60  0000 C CNN
+F 3 "" H 6750 3850 60  0000 C CNN
+	1    6750 3850
+	0    1    1    0   
+$EndComp
+$Comp
+L INDUCTOR L1
+U 1 1 55D67025
+P 7250 3550
+F 0 "L1" V 7200 3550 50  0000 C CNN
+F 1 "100uH" V 7350 3550 50  0000 C CNN
+F 2 "" H 7250 3550 60  0000 C CNN
+F 3 "" H 7250 3550 60  0000 C CNN
+	1    7250 3550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L CP C2
+U 1 1 55D670A8
+P 7900 3950
+F 0 "C2" H 7925 4050 50  0000 L CNN
+F 1 "100uF" H 7925 3850 50  0000 L CNN
+F 2 "" H 7938 3800 30  0000 C CNN
+F 3 "" H 7900 3950 60  0000 C CNN
+	1    7900 3950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6750 3550 6950 3550
+Connection ~ 6750 4400
+Wire Wire Line
+	7550 3550 7900 3550
+Connection ~ 7900 4400
+Wire Wire Line
+	7900 2400 7900 3800
+Wire Wire Line
+	7500 2400 8450 2400
+$Comp
+L Q_NPN_BCE Q1
+U 1 1 55D67197
+P 6650 3150
+F 0 "Q1" H 6950 3200 50  0000 R CNN
+F 1 "MJE3055T" H 7250 3100 50  0000 R CNN
+F 2 "" H 6850 3250 29  0000 C CNN
+F 3 "" H 6650 3150 60  0000 C CNN
+	1    6650 3150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6750 3350 6750 3700
+Wire Wire Line
+	6250 3150 6450 3150
+Wire Wire Line
+	6250 3150 6250 3550
+Wire Wire Line
+	6250 3550 6000 3550
+Wire Wire Line
+	6750 2800 6750 2950
+Connection ~ 6000 2800
+$Comp
+L POT RV1
+U 1 1 55D67383
+P 6850 2450
+F 0 "RV1" H 6850 2350 50  0000 C CNN
+F 1 "100k" H 6850 2450 50  0000 C CNN
+F 2 "" H 6850 2450 60  0000 C CNN
+F 3 "" H 6850 2450 60  0000 C CNN
+	1    6850 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R2
+U 1 1 55D67472
+P 6150 4100
+F 0 "R2" V 6230 4100 50  0000 C CNN
+F 1 "47k" V 6150 4100 50  0000 C CNN
+F 2 "" V 6080 4100 30  0000 C CNN
+F 3 "" H 6150 4100 30  0000 C CNN
+	1    6150 4100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6000 3700 6150 3700
+Wire Wire Line
+	6150 2450 6150 3950
+Wire Wire Line
+	6150 4400 6150 4250
+Connection ~ 6150 4400
+Wire Wire Line
+	6600 2450 6150 2450
+Connection ~ 6150 3700
+$Comp
+L R R3
+U 1 1 55D675FD
+P 7450 2400
+F 0 "R3" V 7530 2400 50  0000 C CNN
+F 1 "47k" V 7450 2400 50  0000 C CNN
+F 2 "" V 7380 2400 30  0000 C CNN
+F 3 "" H 7450 2400 30  0000 C CNN
+	1    7450 2400
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6750 4400 6750 4000
+Connection ~ 6750 3550
+Wire Wire Line
+	7900 4400 7900 4100
+Connection ~ 7900 3550
+Wire Wire Line
+	3150 4400 8450 4400
+Wire Wire Line
+	7300 2400 7300 2300
+Wire Wire Line
+	7300 2300 6850 2300
+Text Notes 4200 2900 2    60   ~ 0
+5W
+Wire Wire Line
+	4300 3650 4100 3650
+Wire Wire Line
+	4100 3650 4100 3850
+$Comp
+L CP C3
+U 1 1 55D68AD3
+P 3600 3400
+F 0 "C3" H 3625 3500 50  0000 L CNN
+F 1 "47uF" H 3625 3300 50  0000 L CNN
+F 2 "" H 3638 3250 30  0000 C CNN
+F 3 "" H 3600 3400 60  0000 C CNN
+	1    3600 3400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3600 3550 3600 4400
+Connection ~ 3600 4400
+Wire Wire Line
+	3600 3250 3600 2400
+Connection ~ 3600 2400
+Text Notes 8650 2600 2    60   ~ 0
+5V 1A
+Text Notes 4950 4150 2    60   ~ 0
+40kHz(12V)
+Text Notes 3100 2600 2    60   ~ 0
+12V
+$Comp
+L R R4
+U 1 1 55D696C4
+P 6400 3800
+F 0 "R4" V 6480 3800 50  0000 C CNN
+F 1 "10k" V 6400 3800 50  0000 C CNN
+F 2 "" V 6330 3800 30  0000 C CNN
+F 3 "" H 6400 3800 30  0000 C CNN
+	1    6400 3800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6400 3950 6400 4400
+Connection ~ 6400 4400
+Wire Wire Line
+	6400 3650 6400 3150
+Connection ~ 6400 3150
+Connection ~ 7900 2400
+$Comp
+L LED D2
+U 1 1 55D69301
+P 8300 3100
+F 0 "D2" H 8300 3200 50  0000 C CNN
+F 1 "LED" H 8300 3000 50  0000 C CNN
+F 2 "" H 8300 3100 60  0000 C CNN
+F 3 "" H 8300 3100 60  0000 C CNN
+	1    8300 3100
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R5
+U 1 1 55D6937C
+P 8300 3900
+F 0 "R5" V 8380 3900 50  0000 C CNN
+F 1 "4.7k" V 8300 3900 50  0000 C CNN
+F 2 "" V 8230 3900 30  0000 C CNN
+F 3 "" H 8300 3900 30  0000 C CNN
+	1    8300 3900
+	1    0    0    -1  
+$EndComp
+Connection ~ 8300 4400
+Connection ~ 8300 2400
+Wire Wire Line
+	8300 2400 8300 2900
+Wire Wire Line
+	8300 3300 8300 3750
+Wire Wire Line
+	8300 4050 8300 4400
+Text Notes 4450 4300 0    60   ~ 0
+50kHz(7v)
+$EndSCHEMATC
